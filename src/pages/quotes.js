@@ -9,7 +9,6 @@ export const quotes = [
 
 export const randomQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.length)
-
     return quotes [randomIndex]
 }
 

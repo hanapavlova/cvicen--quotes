@@ -6,22 +6,26 @@ import { quotes, randomQuote, moveTotop } from './quotes.js';
 document.querySelector("#quote").textContent = randomQuote()
 
 const renderQuotes = () => {
+    const quotesList = document.querySelector(".container");
+    quotesList.innerHTML = "";
     quotes.forEach((item) => {
-    const quotesList = document.querySelector(".container")
     const quoteElement = document.createElement("p");
     quoteElement.textContent = item;
-    quoteElement.id = `quote`;
+    quoteElement.className = "quote";
     quotesList.appendChild(quoteElement);
 });
-}
-renderQuotes()
 
-const quoteElement = document.querySelectorAll("#quote");
+const quoteElement = document.querySelectorAll(".quote");
     quoteElement.forEach((item, index) => {
     item.addEventListener("click", () => {
         moveTotop(index);
         renderQuotes();
     });
 });
+
+}
+renderQuotes()
+
+
 
 
